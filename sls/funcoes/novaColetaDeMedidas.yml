@@ -1,0 +1,13 @@
+NovaColetaDeMedidas:
+  handler: src/functions/novaColetaDeMedidas.main
+  events:
+    - http:
+        path: coletas
+        method: post
+        
+  iamRoleStatementsName: NovaColetaDeMedidas-lambdaRole
+  # iamRoleStatements:
+  #   - Effect: Allow
+  #     Action:
+  #       - sqs:sendMessage
+  #     Resource: !GetAtt [SearchAggregatorSQS, Arn]

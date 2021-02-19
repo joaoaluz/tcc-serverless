@@ -1,0 +1,18 @@
+service: tcc-serverless
+
+plugins:
+  - serverless-webpack
+
+package:
+  exclude:
+    - .serverless/**
+    - .git/**
+    - node_modules/**
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-east-1
+  serviceName: ${self:service}
+functions:
+  - ${file(sls/funcoes/novaColetaDeMedidas.yml)}

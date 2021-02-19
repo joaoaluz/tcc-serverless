@@ -1,0 +1,5 @@
+src/scripts
+./webpack.config.js
+**/*.spec.js
+**/*.test.js
+__mocks__
