@@ -1,0 +1,11 @@
+RegistroDeMedidas:
+  handler: src/functions/registroDeMedidas.main
+  events:
+    - http:
+        path: medidas
+        method: post
+  iamRoleStatementsName: NovaColetaDeMedidas-lambdaRole
+  iamRoleStatements:
+    - Effect: Allow
+      Action: dynamodb:PutItem
+      Resource: arn:aws:dynamodb:us-east-1:244183629378:table/tcc-aws-service-medidas

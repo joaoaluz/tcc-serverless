@@ -45,7 +45,7 @@ module.exports = {
   resolve: {
     extensions: ['.webpack.js', '.web.js', '.mjs', '.js', '.json', '.jsx'],
     alias: {
-      Modelos$: path.resolve(__dirname, 'modelps'),
+      Modelos$: path.resolve(__dirname, 'modelos'),
       Utils$: path.resolve(__dirname, 'src/utils'),
     },
   },
