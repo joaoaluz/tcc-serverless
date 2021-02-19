@@ -25,7 +25,7 @@ module.exports = {
     'import/no-unresolved': [2, {
       ignore: [
         '^Validators$',
-        '^Models$',
+        '^Modelos$',
         '^Utils$',
       ],
     }],

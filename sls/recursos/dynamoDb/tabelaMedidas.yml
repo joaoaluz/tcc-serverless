@@ -1,0 +1,13 @@
+Resources:
+  tabelaDeMedidasdynamodb:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:provider.environment.tabelaDeMedidasdynamodb}
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+        - AttributeName: carimboDeTempo
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH

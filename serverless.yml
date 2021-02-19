@@ -13,6 +13,12 @@ provider:
   name: aws
   runtime: nodejs12.x
   region: us-east-1
-  serviceName: ${self:service}
+  environment:
+    serviceName: ${self:service}
+    tabelaDeMedidasdynamodb: ${self:service}-medidas
+  
 functions:
   - ${file(sls/funcoes/novaColetaDeMedidas.yml)}
+
+resources:
+  - ${file(sls/recursos/dynamoDb/tabelaMedidas.yml)}
