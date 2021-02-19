@@ -1,4 +1,4 @@
-service: tcc-serverless
+service: tcc-aws-service
 
 plugins:
   - serverless-webpack
