@@ -1,5 +1,5 @@
-RegistroDeMedidas:
-  handler: src/functions/registroDeMedidas.main
+RegistrarMedidas:
+  handler: src/functions/registrarMedidas.main
   events:
     - http:
         path: medidas

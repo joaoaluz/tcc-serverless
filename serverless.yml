@@ -2,6 +2,9 @@ service: tcc-aws-service
 
 plugins:
   - serverless-webpack
+  - serverless-pseudo-parameters
+  - serverless-iam-roles-per-function
+
 
 package:
   exclude:
@@ -18,7 +21,8 @@ provider:
     tabelaDeMedidasdynamodb: ${self:service}-medidas
   
 functions:
-  - ${file(sls/funcoes/registroDeMedidas.yml)}
+  - ${file(sls/funcoes/registrarMedidas.yml)}
+  - ${file(sls/funcoes/listarMedidas.yml)}
 
 resources:
   - ${file(sls/recursos/dynamoDb/tabelaMedidas.yml)}

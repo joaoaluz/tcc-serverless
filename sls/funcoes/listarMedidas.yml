@@ -1,0 +1,11 @@
+ListarMedidas:
+  handler: src/functions/listarMedidas.main
+  events:
+    - http:
+        path: medidas
+        method: get
+        iamRoleStatementsName: ListarMedidas-lambdaRole
+        iamRoleStatements:
+          - Effect: Allow
+            Action: dynamodb:Query
+            Resource: arn:aws:dynamodb:us-east-1:244183629378:table/tcc-aws-service-medidas

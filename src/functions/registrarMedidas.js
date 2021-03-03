@@ -25,12 +25,12 @@ export const main = async (event) => {
 
     return apiResponse(200, {
       body: {
-        message: 'Successfully fetched!',
+        message: 'Successo em salvar as medidas!',
         medidas,
       },
     });
   } catch (error) {
-    Logger.error('Something went wrong.', { error });
+    Logger.error('Algo deu errado.', { error });
     return apiResponse(500, { body: error });
   }
 };
