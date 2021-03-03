@@ -10,12 +10,14 @@ import {
 export const main = async (event) => {
   try {
     const {
+      equipamento,
       tensao,
       corrente,
       potencia,
     } = typeof event.body === 'string' ? JSON.parse(event.body) : event.body;
 
     const medidas = new Medidas({
+      equipamento,
       tensao,
       corrente,
       potencia,

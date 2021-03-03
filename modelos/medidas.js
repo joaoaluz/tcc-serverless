@@ -14,6 +14,10 @@ Medidas.define(
       type: 'string',
       primaryKey: true,
     },
+    equipamento: {
+      type: 'string',
+      required: true,
+    },
     carimboDeTempo: {
       type: 'string',
       required: true,

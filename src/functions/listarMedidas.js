@@ -27,6 +27,7 @@ const getParametrosDeConsulta = (parameters) => {
 export const main = async (event) => {
   try {
     const {
+      equipamento,
       dataInicial,
       dataFinal,
       limit,
@@ -34,11 +35,15 @@ export const main = async (event) => {
     } = getParametrosDeConsulta(event.queryStringParameters);
 
     Logger.info('Nova listagem de medidas', {
+      equipamento,
       dataInicial,
       dataFinal,
     });
 
     const queryParams = {
+      equipamento: {
+        operator: '=', value: 'ventilador',
+      },
       carimboDeTempo: {
         operator: 'between',
         min: dataInicial,

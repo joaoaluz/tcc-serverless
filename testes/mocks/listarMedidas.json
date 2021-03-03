@@ -1,7 +1,8 @@
 {
   "queryStringParameters": {
+    "equipamento": "televisao",
     "limit": 20,
-    "dataInicial": "2021-01-07T14:27:06.312Z",
-    "dataFinal": "2021-03-001T14:27:06.312Z"
+    "dataInicial": "2021-03-02T20:14:15-03:00",
+    "dataFinal": "2021-03-02T22:14:15-03:00"
   }
 }
