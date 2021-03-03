@@ -5,9 +5,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { BaseModelv2 } from 'bgc-shared';
 
-export class Medidas extends BaseModelv2 {}
+export class Medida extends BaseModelv2 {}
 
-Medidas.define(
+Medida.define(
   process.env.tabelaDeMedidasdynamodb,
   {
     id: {
@@ -37,9 +37,9 @@ Medidas.define(
   },
   {
     hooks: {
-      beforeSave: (Medidas) => {
-        Medidas.id = uuidv4();
-        Medidas.carimboDeTempo = moment().tz('America/Sao_Paulo').format();
+      beforeSave: (Medida) => {
+        Medida.id = uuidv4();
+        Medida.carimboDeTempo = moment().tz('America/Sao_Paulo').format();
       },
     },
   },

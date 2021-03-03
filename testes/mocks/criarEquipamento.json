@@ -1,0 +1,9 @@
+{
+  "body": {
+    "nome": "ventilador",
+    "estado": "ligado",
+    "local": "sala",
+    "consumo": "500",
+    "potencia": 200
+  }
+}

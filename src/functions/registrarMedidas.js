@@ -4,7 +4,7 @@ import {
 } from 'bgc-shared';
 
 import {
-  Medidas,
+  Medida,
 } from 'Modelos';
 
 export const main = async (event) => {
@@ -16,19 +16,19 @@ export const main = async (event) => {
       potencia,
     } = typeof event.body === 'string' ? JSON.parse(event.body) : event.body;
 
-    const medidas = new Medidas({
+    const medida = new Medida({
       equipamento,
       tensao,
       corrente,
       potencia,
     });
 
-    await medidas.save();
+    await medida.save();
 
     return apiResponse(200, {
       body: {
-        message: 'Successo em salvar as medidas!',
-        medidas,
+        message: 'Successo em salvar as Medida!',
+        medida,
       },
     });
   } catch (error) {

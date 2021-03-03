@@ -4,7 +4,7 @@ import {
 } from 'bgc-shared';
 
 import {
-  Medidas,
+  Medida,
 } from 'Modelos';
 
 import queryString from 'query-string';
@@ -34,7 +34,7 @@ export const main = async (event) => {
       lastEvaluatedKey,
     } = getParametrosDeConsulta(event.queryStringParameters);
 
-    Logger.info('Nova listagem de medidas', {
+    Logger.info('Nova listagem de Medidas', {
       equipamento,
       dataInicial,
       dataFinal,
@@ -51,7 +51,7 @@ export const main = async (event) => {
       },
     };
 
-    const { Items: resultados, LastEvaluatedKey, Count } = await Medidas.list(
+    const { Items: resultados, LastEvaluatedKey, Count } = await Medida.list(
       queryParams,
       {
         limit,
@@ -61,8 +61,8 @@ export const main = async (event) => {
 
     return apiResponse(200, {
       body: {
-        menssagem: 'Sucesso em listar as medidas',
-        medidas: {
+        menssagem: 'Sucesso em listar as Medidas',
+        Medida: {
           resultados,
           Count,
           LastEvaluatedKey,

@@ -1,1 +1,2 @@
-export * from './medidas';
+export * from './medida';
+export * from './equipamento';

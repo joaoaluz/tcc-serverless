@@ -19,10 +19,14 @@ provider:
   environment:
     serviceName: ${self:service}
     tabelaDeMedidasdynamodb: ${self:service}-medidas
+    tabelaDeEquipamentosdynamodb: ${self:service}-equipamento
+
   
 functions:
   - ${file(sls/funcoes/registrarMedidas.yml)}
   - ${file(sls/funcoes/listarMedidas.yml)}
+  - ${file(sls/funcoes/criarEquipamento.yml)}
 
 resources:
   - ${file(sls/recursos/dynamoDb/tabelaMedidas.yml)}
+  - ${file(sls/recursos/dynamoDb/tabelaEquipamento.yml)}

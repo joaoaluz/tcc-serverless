@@ -1,0 +1,11 @@
+CriarEquipamento:
+  handler: src/functions/criarEquipamento.main
+  events:
+    - http:
+        path: equipamentos
+        method: post
+  iamRoleStatementsName: CriarEquipamento-lambdaRole
+  iamRoleStatements:
+    - Effect: Allow
+      Action: dynamodb:PutItem
+      Resource: arn:aws:dynamodb:us-east-1:244183629378:table/tcc-aws-service-equipamento
