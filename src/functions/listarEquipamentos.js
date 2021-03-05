@@ -4,7 +4,7 @@ import {
 } from 'bgc-shared';
 
 import {
-  Medida,
+  Equipamento,
 } from 'Modelos';
 
 import queryString from 'query-string';
@@ -27,42 +27,22 @@ const getParametrosDeConsulta = (parameters) => {
 export const main = async (event) => {
   try {
     const {
-      equipamento,
-      dataInicial,
-      dataFinal,
       limit,
       lastEvaluatedKey,
     } = getParametrosDeConsulta(event.queryStringParameters);
 
-    Logger.info('Nova listagem de Medidas', {
-      equipamento,
-      dataInicial,
-      dataFinal,
-    });
+    Logger.info('Nova listagem de Equipamentos');
 
-    const queryParams = {
-      equipamento: {
-        operator: '=', value: equipamento,
-      },
-      carimboDeTempo: {
-        operator: 'between',
-        min: dataInicial,
-        max: dataFinal,
-      },
-    };
-
-    const { Items: resultados, LastEvaluatedKey, Count } = await Medida.list(
-      queryParams,
+    const { Items: resultados, LastEvaluatedKey, Count } = await Equipamento.list({},
       {
         limit,
         lastEvaluatedKey,
-      },
-    );
+      });
 
     return apiResponse(200, {
       body: {
-        menssagem: 'Sucesso em listar as Medidas',
-        Medidas: {
+        menssagem: 'Sucesso em listar as Equipamentos',
+        Equipamentos: {
           resultados,
           Count,
           LastEvaluatedKey,

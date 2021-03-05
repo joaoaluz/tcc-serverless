@@ -1,0 +1,11 @@
+ListarEquipamentos:
+  handler: src/functions/listarEquipamentos.main
+  events:
+    - http:
+        method: get
+        path: equipamentos
+        iamRoleStatementsName: ListarEquipamentos-lambdaRole
+        iamRoleStatements:
+          - Effect: Allow
+            Action: dynamodb:Query
+            Resource: arn:aws:dynamodb:us-east-1:244183629378:table/tcc-aws-service-equipamento

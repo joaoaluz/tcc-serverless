@@ -39,7 +39,7 @@ Equipamento.define(
     hooks: {
       beforeSave: (equipamento) => {
         equipamento.id = uuidv4();
-        equipamento.carimboDeTempo = moment().tz('America/Sao_Paulo').format();
+        equipamento.dataDeCadastro = moment().tz('America/Sao_Paulo').format();
       },
     },
   },

@@ -1,0 +1,11 @@
+PegarEquipamento:
+  handler: src/functions/pegarEquipamento.main
+  events:
+    - http:
+        method: get
+        path: equipamentos/{equipamentoId}
+        iamRoleStatementsName: PegarEquipamento-lambdaRole
+        iamRoleStatements:
+          - Effect: Allow
+            Action: dynamodb:GetItem
+            Resource: arn:aws:dynamodb:us-east-1:244183629378:table/tcc-aws-service-equipamentos
